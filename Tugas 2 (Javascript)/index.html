@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            html, body {
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="h-100 row align-items-center">
+            <div class="col text-center">
+                <div class="inputs">
+                    <input id="first-number" type="number" placeholder="First number">
+                    <br>
+                    <input id="second-number" type="number" placeholder="Second number" style="margin-top: 20px;">
+                    <br>
+                    <input id="result-number" type="text" placeholder="Result" style="margin-top: 20px;" disabled>
+                </div>
+                <div class="operators mt-2">
+                    <button class="btn btn-primary" onclick="calculate('+')">+</button>
+                    <button class="btn btn-primary" onclick="calculate('-')">-</button>
+                    <button class="btn btn-primary" onclick="calculate('*')">*</button>
+                    <button class="btn btn-primary" onclick="calculate('/')">/</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function calculate(operator) {
+                var a = parseFloat(document.getElementById("first-number").value, 10);
+                var b = parseFloat(document.getElementById("second-number").value, 10);
+                var c;
+
+                switch(operator) {
+                    case "+":
+                        c = a + b;
+                        break;
+                    case "-":
+                        c = a - b;
+                        break;
+                    case "*":
+                        c = a * b;
+                        break;
+                    case "/":
+                        c = a / b;
+                        break;
+                }
+
+                document.getElementById("result-number").value = c;
+            }
+        </script>
+    </body>
+</html>
